@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Asisten Manual - Tanpa API Key</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/icons/favicon.ico">
+</head>
+<body class="dark-theme">
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">🧠</span>
+                    <span class="logo-text">AI<span>Manual</span></span>
+                </div>
+                <button class="sidebar-toggle" onclick="toggleSidebar()">◀</button>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="index.html" class="nav-item active">
+                    <span class="nav-icon">📊</span>
+                    <span class="nav-text">Dashboard</span>
+                </a>
+                <a href="kategori.html" class="nav-item">
+                    <span class="nav-icon">📚</span>
+                    <span class="nav-text">Kategori</span>
+                    <span class="nav-badge">48</span>
+                </a>
+                <a href="statistik.html" class="nav-item">
+                    <span class="nav-icon">📈</span>
+                    <span class="nav-text">Statistik</span>
+                </a>
+                <a href="pengaturan.html" class="nav-item">
+                    <span class="nav-icon">⚙️</span>
+                    <span class="nav-text">Pengaturan</span>
+                </a>
+                <a href="bantuan.html" class="nav-item">
+                    <span class="nav-icon">❓</span>
+                    <span class="nav-text">Bantuan</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="user-avatar">👤</div>
+                    <div class="user-info">
+                        <div class="user-name">Tam Lokal</div>
+                        <div class="user-status offline">Offline Mode</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="content-header">
+                <h1>Dashboard AI Asisten</h1>
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="Cepat cari pertanyaan..." id="quickSearch">
+                        <button onclick="quickSearch()">🔍</button>
+                    </div>
+                    <div class="theme-toggle" onclick="toggleTheme()">
+                        <span class="theme-icon">🌙</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon blue">📝</div>
+                    <div class="stat-info">
+                        <div class="stat-value" id="totalResponses">0</div>
+                        <div class="stat-label">Total Respons</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon green">📂</div>
+                    <div class="stat-info">
+                        <div class="stat-value" id="totalCategories">0</div>
+                        <div class="stat-label">Kategori</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon orange">💬</div>
+                    <div class="stat-info">
+                        <div class="stat-value" id="chatCount">0</div>
+                        <div class="stat-label">Percakapan</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon purple">⚡</div>
+                    <div class="stat-info">
+                        <div class="stat-value" id="accuracyRate">100%</div>
+                        <div class="stat-label">Akurasi</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Chat Interface -->
+            <div class="chat-interface">
+                <div class="chat-header">
+                    <div class="chat-title">
+                        <h2>Asisten AI Manual</h2>
+                        <span class="status-badge online">Online (Lokal)</span>
+                    </div>
+                    <div class="chat-actions">
+                        <button class="btn-icon" onclick="resetChat()" title="Reset Chat">↺</button>
+                        <button class="btn-icon" onclick="exportChat()" title="Export Chat">📥</button>
+                        <button class="btn-icon" onclick="clearChat()" title="Hapus Semua">🗑️</button>
+                    </div>
+                </div>
+
+                <div class="chat-messages" id="chatMessages">
+                    <!-- Messages will be inserted here -->
+                </div>
+
+                <div class="chat-input-area">
+                    <div class="typing-indicator" id="typingIndicator"></div>
+                    
+                    <div class="input-wrapper">
+                        <input 
+                            type="text" 
+                            id="userInput" 
+                            placeholder="Ketik pertanyaan... (contoh: halo, apa itu ai, cara sehat)"
+                            autocomplete="off"
+                        >
+                        <button onclick="sendMessage()" class="send-btn">
+                            <span>Kirim</span>
+                            <span class="shortcut">↵</span>
+                        </button>
+                    </div>
+
+                    <!-- Quick Suggestions -->
+                    <div class="suggestions-wrapper">
+                        <div class="suggestions-header">
+                            <span class="suggestions-title">💡 Saran Cepat</span>
+                            <button class="btn-refresh" onclick="refreshSuggestions()">↻</button>
+                        </div>
+                        <div class="suggestions-grid" id="suggestionChips">
+                            <!-- Chips will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Access Categories -->
+            <div class="quick-categories">
+                <h3>Kategori Populer</h3>
+                <div class="category-grid" id="popularCategories">
+                    <!-- Categories will be inserted here -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="data/responses/index.js"></script>
+    <script src="js/search-engine.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
