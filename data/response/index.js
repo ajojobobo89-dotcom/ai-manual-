@@ -1,81 +1,68 @@
 // ============= INDEX DATABASE AI ASISTEN =============
-// File ini menggabungkan semua kategori respons
+// Menggabungkan semua kategori respons
 
-// Sapaan
-const SAPAAN_RESPONSES = [
-    {
-        id: "sapaan-001",
-        keywords: ["halo", "hlo", "helo", "hello", "hai", "hi", "hey", "hay"],
-        response: "Halo! Ada yang bisa saya bantu hari ini? Saya asisten manual dengan 2000+ respons siap pakai. 😊",
-        category: "sapaan"
-    },
-    {
-        id: "sapaan-002",
-        keywords: ["selamat pagi", "pagi", "good morning", "morning", "pg"],
-        response: "Selamat pagi! Semoga hari Anda menyenangkan dan penuh semangat. Ada yang bisa saya bantu? ☀️",
-        category: "sapaan"
-    },
-    {
-        id: "sapaan-003",
-        keywords: ["selamat siang", "siang", "good afternoon"],
-        response: "Selamat siang! Sudah makan siang? Jangan lupa istirahat sebentar ya. 🌤️",
-        category: "sapaan"
-    },
-    {
-        id: "sapaan-004",
-        keywords: ["selamat sore", "sore", "good evening"],
-        response: "Selamat sore! Bagaimana kabar Anda di sore hari ini? Semoga tetap produktif. 🌆",
-        category: "sapaan"
-    },
-    {
-        id: "sapaan-005",
-        keywords: ["selamat malam", "malam", "good night", "night", "gn"],
-        response: "Selamat malam! Semoga istirahat Anda nyenyak dan mimpi indah. 🌙",
-        category: "sapaan"
-    }
-];
-
-// Teknologi
-const TEKNOLOGI_RESPONSES = [
-    {
-        id: "teknologi-001",
-        keywords: ["apa itu ai", "apa itu kecerdasan buatan", "artificial intelligence", "ai"],
-        response: "**AI** (Artificial Intelligence) atau Kecerdasan Buatan adalah simulasi kecerdasan manusia dalam mesin yang diprogram untuk berpikir, belajar, dan mengambil keputusan seperti manusia. 🤖",
-        category: "teknologi"
-    },
-    {
-        id: "teknologi-002",
-        keywords: ["apa itu html", "html"],
-        response: "**HTML** (HyperText Markup Language) adalah bahasa markup standar untuk membuat struktur halaman web. HTML menggunakan tag untuk menentukan elemen seperti heading, paragraf, gambar, dan link.",
-        category: "teknologi"
-    },
-    {
-        id: "teknologi-003",
-        keywords: ["apa itu css", "css"],
-        response: "**CSS** (Cascading Style Sheets) adalah bahasa untuk mengatur tampilan dokumen HTML. CSS mengontrol warna, font, layout, dan responsivitas website.",
-        category: "teknologi"
-    }
-];
-
-// Pendidikan
-const PENDIDIKAN_RESPONSES = [
-    {
-        id: "pendidikan-001",
-        keywords: ["cara belajar efektif", "tips belajar", "belajar efektif"],
-        response: "**Tips Belajar Efektif:**\n\n1. Buat jadwal rutin\n2. Gunakan teknik Pomodoro (25 menit belajar, 5 menit istirahat)\n3. Pilih tempat nyaman\n4. Catat poin penting\n5. Review materi berkala\n6. Diskusi dengan teman",
-        category: "pendidikan"
-    }
-];
+// Import semua kategori
+const SAPAAN_RESPONSES = require('./kategori-01-sapaan.js');
+const TEKNOLOGI_RESPONSES = require('./kategori-02-teknologi.js');
+const PENDIDIKAN_RESPONSES = require('./kategori-03-pendidikan.js');
+const KESEHATAN_RESPONSES = require('./kategori-04-kesehatan.js');
+const MOTIVASI_RESPONSES = require('./kategori-05-motivasi.js');
+const MAKANAN_RESPONSES = require('./kategori-06-makanan.js');
+const HEWAN_RESPONSES = require('./kategori-07-hewan.js');
+const WISATA_RESPONSES = require('./kategori-08-wisata.js');
+const MATEMATIKA_RESPONSES = require('./kategori-09-matematika.js');
+const FISIKA_RESPONSES = require('./kategori-10-fisika.js');
+const KIMIA_RESPONSES = require('./kategori-11-kimia.js');
+const BIOLOGI_RESPONSES = require('./kategori-12-biologi.js');
+const BAHASA_RESPONSES = require('./kategori-13-bahasa.js');
+const OLAHRAGA_RESPONSES = require('./kategori-14-olahraga.js');
+const SENI_RESPONSES = require('./kategori-15-seni.js');
+const BISNIS_RESPONSES = require('./kategori-16-bisnis.js');
+const PSIKOLOGI_RESPONSES = require('./kategori-17-psikologi.js');
+const ASTRONOMI_RESPONSES = require('./kategori-18-astronomi.js');
+const SEJARAH_RESPONSES = require('./kategori-19-sejarah.js');
+const BUDAYA_RESPONSES = require('./kategori-20-budaya.js');
+const GAME_RESPONSES = require('./kategori-21-game.js');
+const FILM_RESPONSES = require('./kategori-22-film.js');
+const MUSIK_RESPONSES = require('./kategori-23-musik.js');
+const FILSAFAT_RESPONSES = require('./kategori-24-filsafat.js');
+const UMUM_RESPONSES = require('./kategori-25-umum.js');
+const PEMBUAT_RESPONSES = require('./kategori-26-pembuat.js'); // <-- KATEGORI BARU
 
 // Gabungkan semua database
 const AI_DATABASE = [
     ...SAPAAN_RESPONSES,
     ...TEKNOLOGI_RESPONSES,
-    ...PENDIDIKAN_RESPONSES
-    // Tambahkan kategori lainnya
+    ...PENDIDIKAN_RESPONSES,
+    ...KESEHATAN_RESPONSES,
+    ...MOTIVASI_RESPONSES,
+    ...MAKANAN_RESPONSES,
+    ...HEWAN_RESPONSES,
+    ...WISATA_RESPONSES,
+    ...MATEMATIKA_RESPONSES,
+    ...FISIKA_RESPONSES,
+    ...KIMIA_RESPONSES,
+    ...BIOLOGI_RESPONSES,
+    ...BAHASA_RESPONSES,
+    ...OLAHRAGA_RESPONSES,
+    ...SENI_RESPONSES,
+    ...BISNIS_RESPONSES,
+    ...PSIKOLOGI_RESPONSES,
+    ...ASTRONOMI_RESPONSES,
+    ...SEJARAH_RESPONSES,
+    ...BUDAYA_RESPONSES,
+    ...GAME_RESPONSES,
+    ...FILM_RESPONSES,
+    ...MUSIK_RESPONSES,
+    ...FILSAFAT_RESPONSES,
+    ...UMUM_RESPONSES,
+    ...PEMBUAT_RESPONSES // <-- KATEGORI BARU
 ];
 
 // Export untuk digunakan
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = AI_DATABASE;
 }
+
+// Untuk penggunaan di browser
+window.AI_DATABASE = AI_DATABASE;
