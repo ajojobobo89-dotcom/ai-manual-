@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kategori - AI Asisten Manual</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/kategori.css">
+</head>
+<body class="dark-theme">
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">🧠</span>
+                    <span class="logo-text">AI<span>Manual</span></span>
+                </div>
+                <button class="sidebar-toggle" onclick="toggleSidebar()">◀</button>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    <span class="nav-text">Dashboard</span>
+                </a>
+                <a href="kategori.html" class="nav-item active">
+                    <span class="nav-icon">📚</span>
+                    <span class="nav-text">Kategori</span>
+                    <span class="nav-badge">26</span>
+                </a>
+                <a href="statistik.html" class="nav-item">
+                    <span class="nav-icon">📈</span>
+                    <span class="nav-text">Statistik</span>
+                </a>
+                <a href="pengaturan.html" class="nav-item">
+                    <span class="nav-icon">⚙️</span>
+                    <span class="nav-text">Pengaturan</span>
+                </a>
+                <a href="bantuan.html" class="nav-item">
+                    <span class="nav-icon">❓</span>
+                    <span class="nav-text">Bantuan</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="user-avatar">👤</div>
+                    <div class="user-info">
+                        <div class="user-name">LifxXcodetz</div>
+                        <div class="user-status offline">Offline Mode</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="content-header">
+                <h1>📚 Kategori</h1>
+                <div class="header-actions">
+                    <div class="category-search">
+                        <input type="text" id="categorySearch" placeholder="Cari kategori..." class="category-search-input">
+                        <button onclick="searchCategory()">🔍</button>
+                    </div>
+                    <div class="theme-toggle" onclick="toggleTheme()">
+                        <span class="theme-icon">🌙</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Category Stats -->
+            <div class="category-stats-cards">
+                <div class="category-stat-card">
+                    <div class="category-stat-value" id="totalKategori">26</div>
+                    <div class="category-stat-label">Total Kategori</div>
+                </div>
+                <div class="category-stat-card">
+                    <div class="category-stat-value" id="totalResponsKategori">2000+</div>
+                    <div class="category-stat-label">Total Respons</div>
+                </div>
+                <div class="category-stat-card">
+                    <div class="category-stat-value" id="aktifKategori">26</div>
+                    <div class="category-stat-label">Kategori Aktif</div>
+                </div>
+                <div class="category-stat-card">
+                    <div class="category-stat-value" id="populerKategori">Teknologi</div>
+                    <div class="category-stat-label">Terpopuler</div>
+                </div>
+            </div>
+
+            <!-- View Toggle -->
+            <div class="view-toggle">
+                <button class="view-toggle-btn active" onclick="toggleView('grid')">🔲 Grid View</button>
+                <button class="view-toggle-btn" onclick="toggleView('list')">📋 List View</button>
+            </div>
+
+            <!-- Categories Container -->
+            <div id="categoriesContainer" class="category-grid-view">
+                <!-- Akan diisi JavaScript -->
+            </div>
+        </main>
+    </div>
+
+    <script src="data/responses/index.js"></script>
+    <script src="js/search-engine.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/kategori.js"></script>
+</body>
+</html>
