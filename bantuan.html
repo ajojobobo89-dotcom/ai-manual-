@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bantuan - AI Asisten Manual</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bantuan.css">
+</head>
+<body class="dark-theme">
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">🧠</span>
+                    <span class="logo-text">AI<span>Manual</span></span>
+                </div>
+                <button class="sidebar-toggle" onclick="toggleSidebar()">◀</button>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    <span class="nav-text">Dashboard</span>
+                </a>
+                <a href="kategori.html" class="nav-item">
+                    <span class="nav-icon">📚</span>
+                    <span class="nav-text">Kategori</span>
+                    <span class="nav-badge">26</span>
+                </a>
+                <a href="statistik.html" class="nav-item">
+                    <span class="nav-icon">📈</span>
+                    <span class="nav-text">Statistik</span>
+                </a>
+                <a href="pengaturan.html" class="nav-item">
+                    <span class="nav-icon">⚙️</span>
+                    <span class="nav-text">Pengaturan</span>
+                </a>
+                <a href="bantuan.html" class="nav-item active">
+                    <span class="nav-icon">❓</span>
+                    <span class="nav-text">Bantuan</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="user-avatar">👤</div>
+                    <div class="user-info">
+                        <div class="user-name">LifxXcodetz</div>
+                        <div class="user-status offline">Offline Mode</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="content-header">
+                <h1>❓ Pusat Bantuan</h1>
+                <div class="header-actions">
+                    <div class="help-search">
+                        <input type="text" id="helpSearch" placeholder="Cari bantuan...">
+                        <button onclick="searchHelp()">🔍</button>
+                    </div>
+                    <div class="theme-toggle" onclick="toggleTheme()">
+                        <span class="theme-icon">🌙</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Quick Help Cards -->
+            <div class="help-grid">
+                <div class="help-card" onclick="showGuide('memulai')">
+                    <div class="help-card-icon">🚀</div>
+                    <h3>Memulai</h3>
+                    <p>Cara menggunakan AI Asisten untuk pemula</p>
+                </div>
+                <div class="help-card" onclick="showGuide('fitur')">
+                    <div class="help-card-icon">✨</div>
+                    <h3>Fitur</h3>
+                    <p>Jelajahi semua kemampuan AI Asisten</p>
+                </div>
+                <div class="help-card" onclick="showGuide('shortcut')">
+                    <div class="help-card-icon">⌨️</div>
+                    <h3>Shortcut</h3>
+                    <p>Tips cepat dan pintasan keyboard</p>
+                </div>
+                <div class="help-card" onclick="showGuide('faq')">
+                    <div class="help-card-icon">❓</div>
+                    <h3>FAQ</h3>
+                    <p>Pertanyaan yang sering diajukan</p>
+                </div>
+                <div class="help-card" onclick="showGuide('kategori')">
+                    <div class="help-card-icon">📚</div>
+                    <h3>Kategori</h3>
+                    <p>Daftar lengkap 26 kategori</p>
+                </div>
+                <div class="help-card" onclick="showGuide('about')">
+                    <div class="help-card-icon">👨‍💻</div>
+                    <h3>Tentang Pembuat</h3>
+                    <p>Info LifxXcodetz yang ganteng</p>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="faq-section" id="faq">
+                <h2>📋 Pertanyaan Umum (FAQ)</h2>
+                
+                <div class="faq-item" onclick="toggleFaq(1)">
+                    <div class="faq-question">
+                        <span>Bagaimana cara memulai chat?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer" id="faq-1">
+                        <p>Cukup ketik pertanyaan di kolom chat lalu tekan Enter atau klik tombol Kirim. AI akan merespon dengan jawaban dari database manual kami yang berisi 2000+ respons!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" onclick="toggleFaq(2)">
+                    <div class="faq-question">
+                        <span>Apakah butuh API key / internet?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer" id="faq-2">
+                        <p><strong>TIDAK!</strong> AI ini 100% offline dan tidak membutuhkan API key sama sekali. Semua respons ditulis manual oleh LifxXcodetz dan berjalan di browser Anda.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" onclick="toggleFaq(3)">
+                    <div class="faq-question">
+                        <span>Bisa pakai singkatan?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer" id="faq-3">
+                        <p><strong>BISA!</strong> AI akan mendeteksi singkatan umum:<br>
+                        • "hlo", "helo" → "halo"<br>
+                        • "mksh", "thx" → "terima kasih"<br>
+                        • "mf", "maap" → "maaf"<br>
+                        • "gpp" → "tidak apa apa"<br>
+                        Dan masih banyak lagi!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" onclick="toggleFaq(4)">
+                    <div class="faq-question">
+                        <span>Siapa pembuat AI ini?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer" id="faq-4">
+                        <p>AI ini dibuat oleh <strong>LifxXcodetz</strong>, seorang developer ganteng yang ingin menyediakan asisten AI gratis tanpa API key untuk masyarakat Indonesia. Beliau juga yang membuat semua 2000+ respons manual ini!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" onclick="toggleFaq(5)">
+                    <div class="faq-question">
+                        <span>Ada berapa kategori?</span>
+                        <span class="faq-toggle">▼</span>
+                    </div>
+                    <div class="faq-answer" id="faq-5">
+                        <p>Saat ini tersedia <strong>26 kategori</strong> dengan total 2000+ respons:<br>
+                        • Sapaan • Teknologi • Pendidikan • Kesehatan • Motivasi • Makanan • Hewan • Wisata • Matematika • Fisika • Kimia • Biologi • Bahasa • Olahraga • Seni • Bisnis • Psikologi • Astronomi • Sejarah • Budaya • Game • Film • Musik • Filsafat • Umum • <strong>Tentang Pembuat (LifxXcodetz)</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panduan Penggunaan -->
+            <div class="guide-section" id="panduan">
+                <h2>📖 Panduan Penggunaan</h2>
+                
+                <div class="guide-step">
+                    <div class="guide-step-number">1</div>
+                    <div class="guide-step-content">
+                        <h4>Memulai Chat</h4>
+                        <p>Buka halaman Dashboard, ketik pertanyaan di kolom chat, tekan Enter atau klik Kirim. AI akan merespon dengan jawaban dari database.</p>
+                    </div>
+                </div>
+
+                <div class="guide-step">
+                    <div class="guide-step-number">2</div>
+                    <div class="guide-step-content">
+                        <h4>Menjelajahi Kategori</h4>
+                        <p>Klik menu "Kategori" di sidebar untuk melihat semua 26 kategori. Klik kategori untuk melihat pertanyaan-pertanyaan populer di dalamnya.</p>
+                    </div>
+                </div>
+
+                <div class="guide-step">
+                    <div class="guide-step-number">3</div>
+                    <div class="guide-step-content">
+                        <h4>Melihat Statistik</h4>
+                        <p>Di halaman Statistik, Anda bisa melihat grafik aktivitas, pertanyaan terpopuler, dan analisis penggunaan AI.</p>
+                    </div>
+                </div>
+
+                <div class="guide-step">
+                    <div class="guide-step-number">4</div>
+                    <div class="guide-step-content">
+                        <h4>Mengatur Preferensi</h4>
+                        <p>Di halaman Pengaturan, Anda bisa mengubah tema, bahasa, notifikasi, dan berbagai preferensi lainnya.</p>
+                    </div>
+                </div>
+
+                <div class="guide-step">
+                    <div class="guide-step-number">5</div>
+                    <div class="guide-step-content">
+                        <h4>Export Chat</h4>
+                        <p>Klik ikon 📥 di chat header untuk mendownload seluruh percakapan sebagai file teks.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kontak -->
+            <div class="contact-section">
+                <h2>💬 Masih Ada Pertanyaan?</h2>
+                <p>Hubungi pembuatnya, LifxXcodetz yang ganteng, untuk bantuan lebih lanjut</p>
+                <div class="contact-buttons">
+                    <a href="mailto:lifxxcodetz@example.com" class="contact-button">📧 Email</a>
+                    <a href="https://github.com/lifxxcodetz" target="_blank" class="contact-button">🐙 GitHub</a>
+                    <a href="#" onclick="showContact('wa')" class="contact-button">📱 WhatsApp</a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/bantuan.js"></script>
+</body>
+</html>
