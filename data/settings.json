@@ -1,0 +1,312 @@
+{
+  "app_name": "AI Asisten Manual",
+  "version": "2.0.0",
+  "author": "LifxXcodetz",
+  "description": "AI Asisten dengan 2000+ respons tanpa API key",
+  "default_settings": {
+    "theme": "dark",
+    "language": "id",
+    "strict_mode": false,
+    "shortcut_detection": true,
+    "typing_indicator": true,
+    "max_messages": 100,
+    "sound_enabled": false,
+    "desktop_notification": false,
+    "save_history": true,
+    "font_size": "medium",
+    "animation_speed": "normal",
+    "chat_timestamp": true,
+    "show_avatar": true,
+    "auto_scroll": true,
+    "enter_to_send": true
+  },
+  "categories": [
+    {
+      "id": 1,
+      "name": "Sapaan",
+      "icon": "👋",
+      "description": "Salam dan sapaan dalam berbagai situasi",
+      "response_count": 200,
+      "color": "#4f46e5"
+    },
+    {
+      "id": 2,
+      "name": "Teknologi",
+      "icon": "💻",
+      "description": "AI, Programming, Internet, Gadget",
+      "response_count": 250,
+      "color": "#3b82f6"
+    },
+    {
+      "id": 3,
+      "name": "Pendidikan",
+      "icon": "📚",
+      "description": "Tips belajar, metode pembelajaran",
+      "response_count": 230,
+      "color": "#10b981"
+    },
+    {
+      "id": 4,
+      "name": "Kesehatan",
+      "icon": "🏥",
+      "description": "Pola hidup sehat, tips kesehatan",
+      "response_count": 180,
+      "color": "#ef4444"
+    },
+    {
+      "id": 5,
+      "name": "Motivasi",
+      "icon": "🔥",
+      "description": "Semangat hidup, kata-kata inspiratif",
+      "response_count": 150,
+      "color": "#f59e0b"
+    },
+    {
+      "id": 6,
+      "name": "Makanan",
+      "icon": "🍜",
+      "description": "Resep masakan, kuliner",
+      "response_count": 160,
+      "color": "#ec4899"
+    },
+    {
+      "id": 7,
+      "name": "Hewan",
+      "icon": "🐾",
+      "description": "Fakta hewan, cara merawat",
+      "response_count": 140,
+      "color": "#8b5cf6"
+    },
+    {
+      "id": 8,
+      "name": "Wisata",
+      "icon": "🏖️",
+      "description": "Tempat wisata, tips traveling",
+      "response_count": 130,
+      "color": "#14b8a6"
+    },
+    {
+      "id": 9,
+      "name": "Matematika",
+      "icon": "➕",
+      "description": "Rumus matematika, hitungan",
+      "response_count": 200,
+      "color": "#f97316"
+    },
+    {
+      "id": 10,
+      "name": "Fisika",
+      "icon": "⚡",
+      "description": "Ilmu fisika, rumus fisika",
+      "response_count": 150,
+      "color": "#06b6d4"
+    },
+    {
+      "id": 11,
+      "name": "Kimia",
+      "icon": "🧪",
+      "description": "Unsur kimia, reaksi kimia",
+      "response_count": 140,
+      "color": "#84cc16"
+    },
+    {
+      "id": 12,
+      "name": "Biologi",
+      "icon": "🧬",
+      "description": "Makhluk hidup, sel, ekosistem",
+      "response_count": 145,
+      "color": "#22c55e"
+    },
+    {
+      "id": 13,
+      "name": "Bahasa",
+      "icon": "🗣️",
+      "description": "Bahasa Inggris, grammar, terjemahan",
+      "response_count": 170,
+      "color": "#a855f7"
+    },
+    {
+      "id": 14,
+      "name": "Olahraga",
+      "icon": "⚽",
+      "description": "Sepak bola, basket, fitness",
+      "response_count": 120,
+      "color": "#eab308"
+    },
+    {
+      "id": 15,
+      "name": "Seni",
+      "icon": "🎨",
+      "description": "Musik, lukis, tari",
+      "response_count": 110,
+      "color": "#d946ef"
+    },
+    {
+      "id": 16,
+      "name": "Bisnis",
+      "icon": "💼",
+      "description": "Wirausaha, marketing, karir",
+      "response_count": 125,
+      "color": "#64748b"
+    },
+    {
+      "id": 17,
+      "name": "Psikologi",
+      "icon": "🧠",
+      "description": "Kesehatan mental, emosi",
+      "response_count": 135,
+      "color": "#94a3b8"
+    },
+    {
+      "id": 18,
+      "name": "Astronomi",
+      "icon": "🌌",
+      "description": "Tata surya, bintang, planet",
+      "response_count": 115,
+      "color": "#0f172a"
+    },
+    {
+      "id": 19,
+      "name": "Sejarah",
+      "icon": "📜",
+      "description": "Peristiwa sejarah, tokoh",
+      "response_count": 125,
+      "color": "#92400e"
+    },
+    {
+      "id": 20,
+      "name": "Budaya",
+      "icon": "🎭",
+      "description": "Tradisi, adat istiadat",
+      "response_count": 130,
+      "color": "#b45309"
+    },
+    {
+      "id": 21,
+      "name": "Game",
+      "icon": "🎮",
+      "description": "Game populer, tips gaming",
+      "response_count": 140,
+      "color": "#7e22ce"
+    },
+    {
+      "id": 22,
+      "name": "Film",
+      "icon": "🎬",
+      "description": "Rekomendasi film, review",
+      "response_count": 135,
+      "color": "#be123c"
+    },
+    {
+      "id": 23,
+      "name": "Musik",
+      "icon": "🎵",
+      "description": "Genre musik, alat musik",
+      "response_count": 130,
+      "color": "#9d174d"
+    },
+    {
+      "id": 24,
+      "name": "Filsafat",
+      "icon": "🤔",
+      "description": "Logika, etika, arti hidup",
+      "response_count": 120,
+      "color": "#1e3a8a"
+    },
+    {
+      "id": 25,
+      "name": "Umum",
+      "icon": "📌",
+      "description": "Fakta unik, joke, tebak-tebakan",
+      "response_count": 300,
+      "color": "#6b7280"
+    },
+    {
+      "id": 26,
+      "name": "Tentang Pembuat",
+      "icon": "👨‍💻",
+      "description": "Informasi tentang LifxXcodetz",
+      "response_count": 50,
+      "color": "#4f46e5"
+    }
+  ],
+  "shortcuts": {
+    "hlo": "halo",
+    "helo": "halo",
+    "hai": "halo",
+    "hi": "halo",
+    "mksh": "terima kasih",
+    "thx": "terima kasih",
+    "tq": "terima kasih",
+    "mkasih": "terima kasih",
+    "trims": "terima kasih",
+    "mf": "maaf",
+    "maap": "maaf",
+    "sori": "maaf",
+    "iya": "ya",
+    "y": "ya",
+    "ga": "tidak",
+    "gk": "tidak",
+    "nggak": "tidak",
+    "tdk": "tidak",
+    "gpp": "tidak apa apa",
+    "ok": "oke",
+    "udh": "sudah",
+    "blm": "belum",
+    "jg": "juga",
+    "aja": "saja",
+    "dgn": "dengan",
+    "utk": "untuk",
+    "krn": "karena",
+    "kpd": "kepada",
+    "pd": "pada",
+    "dr": "dari",
+    "ttg": "tentang",
+    "bgmn": "bagaimana",
+    "gmna": "gimana",
+    "kpn": "kapan",
+    "dmn": "dimana",
+    "knp": "kenapa",
+    "ngapain": "apa"
+  },
+  "themes": {
+    "dark": {
+      "bg_primary": "#0a0f1e",
+      "bg_surface": "#0f1424",
+      "bg_surface_2": "#1a1f35",
+      "border": "#2a2f45",
+      "text_primary": "#ffffff",
+      "text_secondary": "#a0a8c0",
+      "accent": "#4f46e5"
+    },
+    "light": {
+      "bg_primary": "#f0f2f5",
+      "bg_surface": "#ffffff",
+      "bg_surface_2": "#f8fafc",
+      "border": "#e2e8f0",
+      "text_primary": "#1a202c",
+      "text_secondary": "#4a5568",
+      "accent": "#4f46e5"
+    }
+  },
+  "about": {
+    "name": "AI Asisten Manual",
+    "version": "2.0.0",
+    "author": "LifxXcodetz",
+    "email": "lifxxcodetz@example.com",
+    "website": "https://github.com/lifxxcodetz",
+    "description": "AI Asisten dengan 2000+ respons manual tanpa API key. Dibuat dengan ❤️ oleh LifxXcodetz yang ganteng.",
+    "license": "MIT",
+    "created": "2024",
+    "last_update": "2024-03-07",
+    "total_responses": 2000,
+    "total_categories": 26
+  },
+  "statistics": {
+    "total_chats": 0,
+    "total_users": 0,
+    "popular_questions": [],
+    "active_categories": [],
+    "last_reset": null
+  }
+}
