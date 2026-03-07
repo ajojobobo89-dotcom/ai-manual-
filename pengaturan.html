@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengaturan - AI Asisten Manual</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pengaturan.css">
+</head>
+<body class="dark-theme">
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">🧠</span>
+                    <span class="logo-text">AI<span>Manual</span></span>
+                </div>
+                <button class="sidebar-toggle" onclick="toggleSidebar()">◀</button>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    <span class="nav-text">Dashboard</span>
+                </a>
+                <a href="kategori.html" class="nav-item">
+                    <span class="nav-icon">📚</span>
+                    <span class="nav-text">Kategori</span>
+                    <span class="nav-badge">26</span>
+                </a>
+                <a href="statistik.html" class="nav-item">
+                    <span class="nav-icon">📈</span>
+                    <span class="nav-text">Statistik</span>
+                </a>
+                <a href="pengaturan.html" class="nav-item active">
+                    <span class="nav-icon">⚙️</span>
+                    <span class="nav-text">Pengaturan</span>
+                </a>
+                <a href="bantuan.html" class="nav-item">
+                    <span class="nav-icon">❓</span>
+                    <span class="nav-text">Bantuan</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="user-avatar">👤</div>
+                    <div class="user-info">
+                        <div class="user-name">LifxXcodetz</div>
+                        <div class="user-status offline">Offline Mode</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="content-header">
+                <h1>⚙️ Pengaturan</h1>
+                <div class="header-actions">
+                    <button class="btn-save" onclick="saveAllSettings()">Simpan Perubahan</button>
+                    <div class="theme-toggle" onclick="toggleTheme()">
+                        <span class="theme-icon">🌙</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="settings-container">
+                <!-- Tampilan -->
+                <div class="settings-section">
+                    <h2>🎨 Tampilan</h2>
+                    
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <label>Tema</label>
+                            <p>Pilih tampilan yang Anda suka</p>
+                        </div>
+                        <div class="setting-control">
+                            <select id="theme" class="setting-select" onchange="updateThemePreview(this.value)">
+                                <option value="dark">🌙 Gelap</option>
+                                <option value="light">☀️ Terang</option>
+                                <option value="system">⚙️ Ikuti Sistem</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <label>Bahasa</label>
+                            <p>Pilih bahasa antarmuka</p>
+                        </div>
+                        <div class="setting-control">
+                            <select id="language" class="setting-select">
+                                <option value="id">🇮🇩 Indonesia</option>
+                                <option value="en">🇬🇧 English</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <label>Ukuran Font</label>
+                            <p>Sesuaikan ukuran teks</p>
+                        </div>
+                        <div class="setting-control">
+                            <select id="fontSize" class="setting-select">
+                                <option value="small">Kecil</option>
+                                <option value="medium" selected>Sedang</option>
+                                <option value="large">Besar</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chat -->
+                <div class="settings-section">
+                    <h2>💬 Chat</h2>
+
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <label>Mode Pencarian</label>
+                            <p>Normal: fleksibel, Ketat: harus cocok persis</p>
+                        </div>
+                        <div class="setting-control">
+                            <label class="switch">
+                                <input type="checkbox" id="strictMode">
+                                <span class="slider"></span>
+                            </label>
+                            <span id="modeText">Normal</span>
+                        </div>
+                    </div>
+
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <label>Deteksi Singkatan</label>
+                            <p>Otomatis deteksi "hlo" → "halo"</p>
+                        </div>
+                        <div class="setting-control">
+                            <label class="switch">
+                                <input type="checkbox" id="shortcutDetection" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <label>Indikator Mengetik</label>
+                            <p>Tampilkan "sedang mengetik"</p>
+                        </div>
+                        <div class="setting-control">
+                            <label class="switch">
+                                <input type="checkbox" id="typingIndicator" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <label>Max Pesan Tersimpan</label>
+                            <p>Batas maksimal riwayat chat</p>
+                        </div>
+                        <div class="setting-control">
+                            <input type="number" id="maxMessages" class="setting-number" value="100" min="10" max="1000">
+                        </div>
+                    </div>
+
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <label>Enter untuk Kirim</label>
+                            <p>Tekan Enter untuk mengirim pesan</p>
+                        </div>
+                        <div class="setting-control">
+                            <label class="switch">
+                                <input type="checkbox" id="enterToSend" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notifikasi -->
+                <div class="settings-section">
+                    <h2>🔔 Notifikasi</h2>
+
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <label>Suara Notifikasi</label>
+                            <p>Bunyikan suara saat pesan baru</p>
+                        </div>
+                        <div class="setting-control">
+                            <label class="switch">
+                                <input type="checkbox" id="soundEnabled">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <label>Notifikasi Desktop</label>
+                            <p>Tampilkan notifikasi di desktop</p>
+                        </div>
+                        <div class="setting-control">
+                            <label class="switch">
+                                <input type="checkbox" id="desktopNotification">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data & Privasi -->
+                <div class="settings-section">
+                    <h2>🔒 Data & Privasi</h2>
+
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <label>Simpan Riwayat</label>
+                            <p>Menyimpan percakapan di lokal</p>
+                        </div>
+                        <div class="setting-control">
+                            <label class="switch">
+                                <input type="checkbox" id="saveHistory" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <label>Hapus Semua Data</label>
+                            <p>Bersihkan semua data tersimpan</p>
+                        </div>
+                        <div class="setting-control">
+                            <button class="btn-danger" onclick="clearAllData()">🗑️ Hapus Semua</button>
+                        </div>
+                    </div>
+
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <label>Export Data</label>
+                            <p>Download semua data percakapan</p>
+                        </div>
+                        <div class="setting-control">
+                            <button class="btn-secondary" onclick="exportAllData()">📥 Export JSON</button>
+                        </div>
+                    </div>
+
+                    <div class="setting-item">
+                        <div class="setting-info">
+                            <label>Import Data</label>
+                            <p>Upload file backup</p>
+                        </div>
+                        <div class="setting-control">
+                            <button class="btn-secondary" onclick="importData()">📤 Import</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tentang -->
+                <div class="settings-section about-section">
+                    <div class="app-icon-large">🧠</div>
+                    <h2>AI Asisten Manual</h2>
+                    <div class="app-version">Versi 2.0.0</div>
+                    <p class="app-description">
+                        Dibuat dengan ❤️ oleh <strong>LifxXcodetz</strong> yang ganteng.<br>
+                        2000+ respons manual, 26 kategori, tanpa API key, 100% gratis!
+                    </p>
+                    
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <div class="info-label">Dibuat oleh</div>
+                            <div class="info-value">LifxXcodetz</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Lisensi</div>
+                            <div class="info-value">MIT</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Total Respons</div>
+                            <div class="info-value">2000+</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Total Kategori</div>
+                            <div class="info-value">26</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">API Key</div>
+                            <div class="info-value">✅ TIDAK DIPERLUKAN</div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Mode</div>
+                            <div class="info-value">100% Offline</div>
+                        </div>
+                    </div>
+
+                    <button class="btn-secondary" onclick="checkForUpdates()" style="margin-top: 20px;">🔄 Cek Update</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/pengaturan.js"></script>
+</body>
+</html>
