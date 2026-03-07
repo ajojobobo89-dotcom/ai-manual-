@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistik - AI Asisten Manual</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/statistik.css">
+</head>
+<body class="dark-theme">
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <span class="logo-icon">🧠</span>
+                    <span class="logo-text">AI<span>Manual</span></span>
+                </div>
+                <button class="sidebar-toggle" onclick="toggleSidebar()">◀</button>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item">
+                    <span class="nav-icon">📊</span>
+                    <span class="nav-text">Dashboard</span>
+                </a>
+                <a href="kategori.html" class="nav-item">
+                    <span class="nav-icon">📚</span>
+                    <span class="nav-text">Kategori</span>
+                    <span class="nav-badge">26</span>
+                </a>
+                <a href="statistik.html" class="nav-item active">
+                    <span class="nav-icon">📈</span>
+                    <span class="nav-text">Statistik</span>
+                </a>
+                <a href="pengaturan.html" class="nav-item">
+                    <span class="nav-icon">⚙️</span>
+                    <span class="nav-text">Pengaturan</span>
+                </a>
+                <a href="bantuan.html" class="nav-item">
+                    <span class="nav-icon">❓</span>
+                    <span class="nav-text">Bantuan</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="user-profile">
+                    <div class="user-avatar">👤</div>
+                    <div class="user-info">
+                        <div class="user-name">LifxXcodetz</div>
+                        <div class="user-status offline">Offline Mode</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="content-header">
+                <h1>📊 Statistik & Analitik</h1>
+                <div class="header-actions">
+                    <select class="date-range" id="timeRange" onchange="changeTimeRange(this.value)">
+                        <option value="hari">Hari Ini</option>
+                        <option value="minggu">Minggu Ini</option>
+                        <option value="bulan">Bulan Ini</option>
+                        <option value="semua" selected>Semua Waktu</option>
+                    </select>
+                    <div class="theme-toggle" onclick="toggleTheme()">
+                        <span class="theme-icon">🌙</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Stats Overview -->
+            <div class="stats-overview">
+                <div class="stats-card-large">
+                    <div class="stats-card-header">
+                        <div class="stats-card-icon">💬</div>
+                        <div class="stats-card-title">Total Percakapan</div>
+                    </div>
+                    <div class="stats-card-value" id="totalChats">1,284</div>
+                    <div class="stats-card-change positive">↑ 12% dari minggu lalu</div>
+                </div>
+                <div class="stats-card-large">
+                    <div class="stats-card-header">
+                        <div class="stats-card-icon">👥</div>
+                        <div class="stats-card-title">Pengguna Aktif</div>
+                    </div>
+                    <div class="stats-card-value" id="totalUsers">342</div>
+                    <div class="stats-card-change positive">↑ 8% dari minggu lalu</div>
+                </div>
+                <div class="stats-card-large">
+                    <div class="stats-card-header">
+                        <div class="stats-card-icon">⏱️</div>
+                        <div class="stats-card-title">Rata-rata Respon</div>
+                    </div>
+                    <div class="stats-card-value" id="avgResponse">0.3 detik</div>
+                    <div class="stats-card-change positive">↑ 5% lebih cepat</div>
+                </div>
+            </div>
+
+            <!-- Charts -->
+            <div class="charts-grid">
+                <div class="chart-card">
+                    <h3>📅 Aktivitas Harian</h3>
+                    <div class="chart-container" id="dailyChart">
+                        <div class="bar-chart">
+                            <!-- Akan diisi JavaScript -->
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h3>🥧 Kategori Terpopuler</h3>
+                    <div class="chart-container" id="categoryChart">
+                        <div class="pie-chart"></div>
+                        <div class="legend" id="categoryLegend"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Top Questions -->
+            <div class="stats-table-container">
+                <h3>🔥 Pertanyaan Terpopuler</h3>
+                <table class="stats-table" id="topQuestions">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Pertanyaan</th>
+                            <th>Kategori</th>
+                            <th>Frekuensi</th>
+                            <th>Trend</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Apa itu AI?</td>
+                            <td>Teknologi</td>
+                            <td>234x</td>
+                            <td class="trend-up">↑ 23%</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Cara belajar efektif</td>
+                            <td>Pendidikan</td>
+                            <td>187x</td>
+                            <td class="trend-up">↑ 15%</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>LifxXcodetz ganteng?</td>
+                            <td>Tentang Pembuat</td>
+                            <td>156x</td>
+                            <td class="trend-up">↑ 100%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Activity Heatmap -->
+            <div class="chart-card">
+                <h3>🌡️ Heatmap Aktivitas</h3>
+                <div class="heatmap" id="activityHeatmap"></div>
+                <div class="heatmap-label">Sen Sel Rab Kam Jum Sab Min</div>
+            </div>
+        </main>
+    </div>
+
+    <script src="data/responses/index.js"></script>
+    <script src="js/search-engine.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/statistik.js"></script>
+</body>
+</html>
